@@ -5,6 +5,8 @@ import './signIn.styles.scss'
 import {signInWithGoogle} from '../../firebase/firebase.utils'
 
 class SignIn extends React.Component{
+    // Este es el estado de el componente
+
     constructor(props){
         super(props);
         this.state = {
@@ -12,12 +14,12 @@ class SignIn extends React.Component{
             password:''
         }
     }
-
+    // esto es lo que se encarga de limpiar los campos en lo que se "ENVIA" el formulario
     handleSubmit = event =>{
         event.prevenDefault();
         this.setState({email:'', password:''})
     }
-
+    // esto es lo que se encarga de cambiar el estado en lo que se prduzc un cambiio en los input
     handleChange = event =>{
         const {value, name} = event.target;
         this.setState({[name]:value})
